@@ -1,0 +1,9 @@
+node_modules
+yarn.lock
+dist
+package-lock.json
+.vercel
+services
+testServices
+code
+build

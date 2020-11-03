@@ -1,0 +1,31 @@
+{
+  "name": "taro-image-code-generator",
+  "main": "./dist/index",
+  "typings": "./dist/",
+  "version": "1.0.0",
+  "description": "auto generate taro image template code",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "tsc",
+    "start": "node ./dist/index",
+    "test": "node ./dist/test",
+    "watch": "tsc --watch",
+    "prepublish": "npm run build"
+  },
+  "type": "commonjs",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/imagemin": "^7.0.0",
+    "@types/imagemin-jpegtran": "^5.0.0",
+    "@types/node": "^14.14.6",
+    "@types/prettier": "^2.1.5",
+    "image-size": "^0.9.3",
+    "imagemin": "^7.0.1",
+    "imagemin-jpegtran": "^7.0.0",
+    "imagemin-pngquant": "^9.0.1",
+    "prettier": "^2.1.2",
+    "typescript": "^4.0.5"
+  }
+}
