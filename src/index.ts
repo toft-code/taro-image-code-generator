@@ -8,7 +8,6 @@ import imageminPngquant from 'imagemin-pngquant'
 
 const root = 'build'
 
-// const directoryPath = path.join(__dirname, './')
 fs.readdir('./', function (err, files) {
   if (err) {
     return console.log('Unable to scan directory: ' + err)
