@@ -26,6 +26,9 @@ async function generate(imageFileName: string) {
   const componentName = pascalCase(imageFileName.split('.')[0])
   const imageSizeInfo = imageSize(imageFileName)
 
+  console.log('height: ' + imageSizeInfo.height)
+  console.log('width: ' + imageSizeInfo.width)
+
   fs.rmdirSync(root, { recursive: true })
   fs.mkdirSync(root)
   fs.mkdirSync(`${root}/${componentName}`)
