@@ -46,13 +46,13 @@ async function generate(imageFileName: string) {
   const tsxCode = `
     import { View } from '@tarojs/components'
     import React from 'react'
-    import './index.scss'
+    import styles from './index.module.less'
   
     type Props = {}
   
     const ${componentName}: React.FC<Props> = () => {
       return (
-        <View className="${componentName}"></View>
+        <View className={styles.${componentName}}></View>
       )
     }
   
@@ -63,17 +63,17 @@ async function generate(imageFileName: string) {
   fs.writeFileSync(tsxFilePath, formatCode(tsxCode))
 
   fs.writeFileSync(
-    `${root}/${componentName}/index.scss`,
+    `${root}/${componentName}/index.module.less`,
     formatCode(
       `
     .${componentName}{
-      width: ${imageSizeInfo.width}rpx;
-      height: ${imageSizeInfo.height}rpx;
+      width: ${imageSizeInfo.width}px;
+      height: ${imageSizeInfo.height}px;
       background-image: url('./${imageFileName}');
       background-size: 100% 100%;
     }`,
       {
-        parser: 'scss',
+        parser: 'less',
       }
     )
   )
